@@ -7,12 +7,11 @@
 
 
 class A1Pipeline(object):
-    def process_item(self, item, spider):
-        fp = open( "dytt8.txt", "a" )
-        # fp.write( item['type'] + '\t' + item['name'] + '\t' + item['href'] + '\t' + item['downloadURL'] + '\t' + "\n" )
-        fp.write(item['type'] + '\t' + item['name'] + '\t' + item['href'] + '\t' )
-        for downloadURL in item['downloadURL']:
-            fp.write( downloadURL + '\t' )
-        fp.write( '\n' )
-        fp.close()
-        # return item
+	def process_item(self, item, spider):
+		fp = open("dytt8.cvs", "a")
+		fp.write(item['type'] + '\t' + item['name'] + '\t' + item['href'] + '\t')
+		for downloadURL in item['downloadURL']:
+			fp.write(downloadURL + '\t')
+		fp.write('\n')
+		fp.close()
+		# return item
